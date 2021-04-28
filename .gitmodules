@@ -1,0 +1,9 @@
+[submodule "webapp-frontend"]
+	path = webapp-frontend
+	url = ./webapp-frontend
+[submodule "webapp-api"]
+	path = webapp-api
+	url = ./webapp-api
+[submodule "my_node_openzwave"]
+	path = my_node_openzwave
+	url = ./my_node_openzwave
