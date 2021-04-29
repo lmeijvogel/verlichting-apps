@@ -1,9 +1,9 @@
 [submodule "webapp-frontend"]
 	path = webapp-frontend
-	url = ./webapp-frontend
+	url = git@github.com:lmeijvogel/verlichting-webapp-elm
 [submodule "webapp-api"]
 	path = webapp-api
-	url = ./webapp-api
+	url = git@github.com:lmeijvogel/verlichting-api
 [submodule "my_node_openzwave"]
 	path = my_node_openzwave
-	url = ./my_node_openzwave
+	url = git@github.com:lmeijvogel/my_node_openzwave.git
