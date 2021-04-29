@@ -4,7 +4,7 @@ services:
   elm:
     build: ./webapp-frontend
     volumes:
-      - ./webapp-frontend/app
+      - ./webapp-frontend:/app
   nginx:
     build: nginx
     ports:
@@ -13,10 +13,10 @@ services:
       - ./webapp-frontend/out:/usr/share/nginx/html:ro
     depends_on:
       - api
-  phoenix:
+  api:
     build: ./webapp-api
     volumes:
-      - ./webapp-api/app
+      - ./webapp-api:/app
     ports:
       - 4000:4000
     environment:
