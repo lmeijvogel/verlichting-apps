@@ -4,5 +4,7 @@ services:
   driver:
     volumes:
     - ./driver/config/config.json:/etc/config.json:ro
+    devices:
+    - /dev/ttyUSB0
 
     command: yarn start live --config /etc/config.json
