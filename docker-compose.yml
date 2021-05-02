@@ -1,36 +1,20 @@
 version: "3.3"
 
 services:
-  elm:
-    build: ./webapp-frontend
-    volumes:
-      - ./webapp-frontend:/app
-  nginx:
-    build: nginx
-    ports:
-      - 8080:80
-    volumes:
-      - ./webapp-frontend/out:/usr/share/nginx/html:ro
-    depends_on:
-      - api
   api:
     build: ./webapp-api
-    volumes:
-      - ./webapp-api:/app
     ports:
       - 4000:4000
     environment:
     - REDIS_HOST=redis
     - DRIVER_HOST=driver:3000
+
   driver:
     build:
       context: ./my_node_openzwave
-    volumes:
-      - type: bind
-        source: ./my_node_openzwave
-        target: /driver
     environment:
     - REDIS_HOST=redis
     command: yarn start
+
   redis:
     image: redis:latest
