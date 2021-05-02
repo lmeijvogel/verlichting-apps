@@ -2,4 +2,7 @@ version: "3.3"
 
 services:
   driver:
-    command: yarn start live
+    volumes:
+    - ./driver/config/config.json:/etc/config.json:ro
+
+    command: yarn start live --config /etc/config.json
