@@ -7,4 +7,9 @@ services:
     devices:
     - /dev/ttyUSB0
 
+    restart: unless-stopped
     command: yarn start live --config /etc/config.json
+  api:
+    restart: unless-stopped
+  redis:
+    restart: unless-stopped
